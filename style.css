@@ -30,6 +30,7 @@ body {
     transform-style: preserve-3d; /* 3d, não achatar */
     transition: transform .9s; /*efeito de movimento*/
     display: inline-block;
+    border-radius: 1px 1px solid black;
 }
 
 .card:active{
@@ -45,11 +46,11 @@ body {
   position: absolute;
   border-radius: 5px;
   background: rgb(92, 187, 182);
-  backface-visibility: hidden; /* todo elemento tem uma frente e um verso (ao contrario, como um espelho.) essa propriedade retira o verso */
+  backface-visibility: hidden; /* retira o verso */
 }
 
 .card-front {
-    transform: rotateY(180deg); /* antes, o verso aparecia transparente, pois ambas as imagens tem position absolute, ao girar no eixo Y, elas ficaram com os versos virados */
+    transform: rotateY(180deg); /*versos virados */
 }
 
 /* flip card animation */
@@ -59,12 +60,11 @@ body {
 }
 
 .card:hover{
-    animation: pulsate 1s ease-in-out;
+    animation: pulsate 3s ease-in-out;
 }
 
 @keyframes pulsate {
     0%{
-        box-shadow: 
-        0 0 25px #5ddcff;
+        box-shadow: 0 0 25px #5ddcff;
     }
 }
