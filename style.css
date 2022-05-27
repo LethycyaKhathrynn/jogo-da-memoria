@@ -27,8 +27,9 @@ body {
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     cursor: pointer;
     transform: scale(1);
-    transform-style: preserve-3d; /* adiciona perspectiva 3d, para que o elemento nao fique achatada no plano */
-    transition: transform .9s; /* adiciona efeito de movimento ao flip do card */
+    transform-style: preserve-3d; /* 3d, não achatar */
+    transition: transform .9s; /*efeito de movimento*/
+    display: inline-block;
 }
 
 .card:active{
@@ -57,3 +58,14 @@ body {
     transform: rotateY(180deg);
 }
 
+.card:hover{
+    animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow: 
+        0 0 25px #5ddcff;
+        0 0 50px #4e00c2;
+    }
+}
